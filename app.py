@@ -1,13 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template, url_for
 
-# cria a aplicação Flask
 app = Flask(__name__)
 
-# rota principal (home)
 @app.route("/")
 def home():
-    return "Olá, mundo! Meu primeiro servidor Flask."
+    return render_template("index.html")
 
-# só roda se executar este arquivo diretamente
 if __name__ == "__main__":
     app.run(debug=True)
